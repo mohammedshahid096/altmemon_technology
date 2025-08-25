@@ -1,0 +1,12 @@
+/* App.css */
+@import "tailwindcss";
+
+@layer base {
+  .app {
+    @apply w-full pb-10;
+  }
+}
+
+.word-spacing {
+  word-spacing: 0.5rem;
+}
