@@ -15,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const navList = [
   { name: "Home", route: "/" },
+  { name: "Team", route: "/team" },
   {
     name: "FAQs",
     route: "/faqs",

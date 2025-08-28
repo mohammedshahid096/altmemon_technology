@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import {
   Github,
   Linkedin,
@@ -17,8 +17,11 @@ import {
   Zap,
   Target,
 } from "lucide-react";
+import CountUp from "@/components/react-bits/CountUp";
+import SplashCursor from "@/components/react-bits/SplashCursor";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const TeamMemberCard = ({ member, isFounder = false, delay = 0 }) => {
+const TeamMemberCard = memo(({ member, isFounder = false, delay = 0 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -40,12 +43,22 @@ const TeamMemberCard = ({ member, isFounder = false, delay = 0 }) => {
         <div className="flex-shrink-0">
           <div className="relative w-32 h-32 overflow-hidden rounded-full border-4 border-white/20 group-hover:border-white/30 transition-all duration-300 mx-auto md:mx-0">
             <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white text-3xl font-bold">
-                {member.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
+              <Avatar className={"w-full h-full"}>
+                <AvatarImage
+                  src={member.avatarUrl}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+                <AvatarFallback
+                  className="w-full h-full flex items-center justify-center bg-gray-700 text-white text-3xl font-bold"
+                  delayMs={600}
+                >
+                  {member.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </AvatarFallback>
+              </Avatar>
             </div>
           </div>
 
@@ -156,22 +169,31 @@ const TeamMemberCard = ({ member, isFounder = false, delay = 0 }) => {
       </div>
     </div>
   );
-};
+});
 
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Your Name",
+      name: "Mohammed Shahid",
       role: "Founder & Lead Full Stack Developer",
-      currentRole: "Currently at Huemn Interactive",
+      currentRole: "Currently at  9X Technologies Pvt. Ltd.",
       shortBio:
-        "Passionate MERN stack developer with 5+ years of experience building scalable web applications and innovative solutions.",
+        "Passionate MERN stack developer with 2+ years of experience building scalable web applications and innovative solutions.",
       fullBio:
         "A dedicated Full Stack Developer specializing in the MERN stack with extensive experience in building high-performance web applications. Currently contributing to cutting-edge projects at Huemn Interactive while founding ALT Technology to deliver exceptional software solutions.",
-      topSkills: ["MERN Stack", "Node.js", "React", "AWS"],
-      location: "Airoli, Maharashtra, India",
-      experience: 5,
-      email: "founder@alttechnology.dev",
+      topSkills: [
+        "MERN Stack",
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Three.js",
+        "AWS",
+      ],
+      location: "Hyderabad, Telangana, India",
+      experience: 2,
+      email: "mohammedshahidnagodriya@gmail.com",
+      avatarUrl:
+        "https://raw.githubusercontent.com/mohammedshahid096/ShahidProtfolio/main/src/images/shahidprofile.jpg",
       achievements: [
         "Led development of serverless GraphQL API",
         "Built no-code website builder platform",
@@ -183,12 +205,12 @@ const TeamSection = () => {
         {
           platform: "GitHub",
           icon: Github,
-          url: "https://github.com/yourusername",
+          url: "https://github.com/mohammedshahid096",
         },
         {
           platform: "LinkedIn",
           icon: Linkedin,
-          url: "https://linkedin.com/in/yourprofile",
+          url: "https://www.linkedin.com/in/mohammed-shahid-nagodriya-9aa61222a",
         },
         {
           platform: "Twitter",
@@ -198,7 +220,7 @@ const TeamSection = () => {
         {
           platform: "Email",
           icon: Mail,
-          url: "mailto:founder@alttechnology.dev",
+          url: "mailto:mohammedshahidnagodriya@gmail.com",
         },
       ],
       gradient: "from-blue-900/40 to-purple-900/40",
@@ -266,7 +288,6 @@ const TeamSection = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -287,28 +308,52 @@ const TeamSection = () => {
           <div className="text-center p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
             <Users className="w-6 h-6 md:w-8 md:h-8 text-blue-400 mx-auto mb-2 md:mb-3" />
             <div className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">
-              3+
+              <CountUp
+                to={3}
+                duration={2}
+                separator=","
+                className="text-white"
+              />
+              +
             </div>
             <div className="text-gray-300 text-xs md:text-sm">Team Members</div>
           </div>
           <div className="text-center p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
             <Code className="w-6 h-6 md:w-8 md:h-8 text-green-400 mx-auto mb-2 md:mb-3" />
             <div className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">
-              15+
+              <CountUp
+                to={15}
+                duration={2}
+                separator=","
+                className="text-white"
+              />
+              +
             </div>
             <div className="text-gray-300 text-xs md:text-sm">Technologies</div>
           </div>
           <div className="text-center p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
             <Coffee className="w-6 h-6 md:w-8 md:h-8 text-orange-400 mx-auto mb-2 md:mb-3" />
             <div className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">
-              1000+
+              <CountUp
+                to={500}
+                duration={2}
+                separator=","
+                className="text-white"
+              />
+              +
             </div>
             <div className="text-gray-300 text-xs md:text-sm">Hours Coded</div>
           </div>
           <div className="text-center p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
             <Heart className="w-6 h-6 md:w-8 md:h-8 text-red-400 mx-auto mb-2 md:mb-3" />
             <div className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">
-              50+
+              <CountUp
+                to={5}
+                duration={2}
+                separator=","
+                className="text-white"
+              />
+              +
             </div>
             <div className="text-gray-300 text-xs md:text-sm">
               Happy Clients
@@ -327,40 +372,10 @@ const TeamSection = () => {
             />
           ))}
         </div>
-
-        {/* Join Our Team CTA */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl border border-white/10 p-8 md:p-12 max-w-4xl mx-auto">
-            <Zap className="w-10 h-10 md:w-12 md:h-12 text-yellow-400 mx-auto mb-4 md:mb-6" />
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Want to Join Our Team?
-            </h3>
-            <p className="text-gray-300 md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto">
-              We're always looking for talented developers, designers, and
-              creative minds to join our growing team. If you're passionate
-              about creating exceptional software solutions, we'd love to hear
-              from you!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <a
-                href="mailto:careers@alttechnology.dev"
-                className="px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
-              >
-                <Mail className="w-4 h-4" />
-                Send Your Resume
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-2.5 md:px-8 md:py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
+      <SplashCursor />
     </section>
   );
 };
 
-export default TeamSection;
+export default memo(TeamSection);
