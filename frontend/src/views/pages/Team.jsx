@@ -16,6 +16,7 @@ import {
   GraduationCap,
   Zap,
   Target,
+  Globe,
 } from "lucide-react";
 import CountUp from "@/components/react-bits/CountUp";
 import SplashCursor from "@/components/react-bits/SplashCursor";
@@ -226,59 +227,104 @@ const TeamSection = () => {
       gradient: "from-blue-900/40 to-purple-900/40",
     },
     {
-      name: "Frontend Specialist",
-      role: "Senior Frontend Developer",
-      currentRole: "Joining Soon",
+      name: "Mohammad Haneef",
+      role: "Product Designer",
+      currentRole: "Currently at Huemn",
       shortBio:
-        "Expert in React, Next.js and modern frontend technologies with focus on user experience.",
+        "UI/UX and Product Designer with 3 years of experience creating user-centric digital products that enhance usability, clarity, and business value.",
       fullBio:
-        "We're looking for a talented frontend developer to join our team and help create amazing user experiences with React, Next.js, and modern frontend tooling.",
-      topSkills: ["React", "Next.js", "TypeScript", "Tailwind"],
-      location: "Remote",
-      experience: 4,
-      email: "careers@alttechnology.dev",
+        "A results-driven Product Designer specializing in creating intuitive user experiences for B2B SaaS platforms and mobile applications. Experienced in managing design teams, conducting user research, and applying design thinking to develop clean, functional solutions aligned with real user needs. Dedicated to crafting meaningful, effective digital products that improve usability and business outcomes.",
+      topSkills: [
+        "User Research",
+        "UX Strategies",
+        "Product and UI Design",
+        "Usability Testing",
+      ],
+      location: "Hyderabad, Telangana, India",
+      experience: 3,
+      email: "hnf2411@gmail.com",
+      avatarUrl:
+        "https://framerusercontent.com/images/KdgyH3Zf8CSKiCBOXCAQ5CpYo.jpeg?scale-down-to=2048",
       achievements: [
-        "Position opening soon",
-        "Remote work available",
-        "Competitive compensation",
-        "Growth opportunities",
+        "Managed and mentored a team of 4+ designers, improving workflow efficiency",
+        "Designed 5+ core product modules including forms and schedulers",
+        "Created secure document storage mobile app emphasizing user privacy",
+        "Implemented design systems that improved development consistency",
+        "Led end-to-end product design for impactful UI/UX projects",
       ],
       social: [
         {
-          platform: "Email",
-          icon: Mail,
-          url: "mailto:careers@alttechnology.dev",
+          platform: "Portfolio",
+          icon: Globe,
+          url: "https://haneef.framer.ai",
         },
-      ],
-      gradient: "from-green-900/40 to-emerald-900/40",
-    },
-    {
-      name: "Backend Engineer",
-      role: "Senior Backend Developer",
-      currentRole: "Position Available",
-      shortBio:
-        "Specializing in Node.js, databases, and cloud architecture for scalable backend systems.",
-      fullBio:
-        "Seeking an experienced backend developer to architect robust, scalable server-side solutions using Node.js, various databases, and cloud infrastructure.",
-      topSkills: ["Node.js", "MongoDB", "AWS", "Docker"],
-      location: "Remote",
-      experience: 4,
-      email: "careers@alttechnology.dev",
-      achievements: [
-        "Remote-first position",
-        "Latest tech stack",
-        "Flexible working hours",
-        "Professional development",
-      ],
-      social: [
+        {
+          platform: "LinkedIn",
+          icon: Linkedin,
+          url: "https://www.linkedin.com/in/uiuxhaneefmohd/",
+        },
         {
           platform: "Email",
           icon: Mail,
-          url: "mailto:careers@alttechnology.dev",
+          url: "mailto:hnf2411@gmail.com",
         },
       ],
-      gradient: "from-orange-900/40 to-red-900/40",
+      gradient: "from-green-900/40 to-teal-900/40",
     },
+    // {
+    //   name: "Frontend Specialist",
+    //   role: "Senior Frontend Developer",
+    //   currentRole: "Joining Soon",
+    //   shortBio:
+    //     "Expert in React, Next.js and modern frontend technologies with focus on user experience.",
+    //   fullBio:
+    //     "We're looking for a talented frontend developer to join our team and help create amazing user experiences with React, Next.js, and modern frontend tooling.",
+    //   topSkills: ["React", "Next.js", "TypeScript", "Tailwind"],
+    //   location: "Remote",
+    //   experience: 4,
+    //   email: "careers@alttechnology.dev",
+    //   achievements: [
+    //     "Position opening soon",
+    //     "Remote work available",
+    //     "Competitive compensation",
+    //     "Growth opportunities",
+    //   ],
+    //   social: [
+    //     {
+    //       platform: "Email",
+    //       icon: Mail,
+    //       url: "mailto:careers@alttechnology.dev",
+    //     },
+    //   ],
+    //   gradient: "from-green-900/40 to-emerald-900/40",
+    // },
+    // {
+    //   name: "Backend Engineer",
+    //   role: "Senior Backend Developer",
+    //   currentRole: "Position Available",
+    //   shortBio:
+    //     "Specializing in Node.js, databases, and cloud architecture for scalable backend systems.",
+    //   fullBio:
+    //     "Seeking an experienced backend developer to architect robust, scalable server-side solutions using Node.js, various databases, and cloud infrastructure.",
+    //   topSkills: ["Node.js", "MongoDB", "AWS", "Docker"],
+    //   location: "Remote",
+    //   experience: 4,
+    //   email: "careers@alttechnology.dev",
+    //   achievements: [
+    //     "Remote-first position",
+    //     "Latest tech stack",
+    //     "Flexible working hours",
+    //     "Professional development",
+    //   ],
+    //   social: [
+    //     {
+    //       platform: "Email",
+    //       icon: Mail,
+    //       url: "mailto:careers@alttechnology.dev",
+    //     },
+    //   ],
+    //   gradient: "from-orange-900/40 to-red-900/40",
+    // },
   ];
 
   return (
@@ -373,7 +419,8 @@ const TeamSection = () => {
           ))}
         </div>
       </div>
-      <SplashCursor />
+
+      {/* <SplashCursor /> */}
     </section>
   );
 };
