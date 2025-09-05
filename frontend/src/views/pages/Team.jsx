@@ -420,7 +420,7 @@ const TeamSection = () => {
         </div>
       </div>
 
-      {/* <SplashCursor /> */}
+      <SplashCursor />
     </section>
   );
 };
